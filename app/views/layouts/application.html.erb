@@ -1,4 +1,3 @@
-
 <!-- START:head -->
 <!DOCTYPE html>
 <html>
@@ -16,9 +15,11 @@
   </div>
   <div id="columns">
     <div id="side">
-      <div id="cart">
+      <!-- START:hidden_div -->
+      <%= hidden_div_if(@cart.line_items.empty?, id: 'cart') do %>
         <%= render @cart %>
-      </div>
+      <% end %>
+     <!-- END:hidden_div -->
       <ul>
         <li><a href="http://www....">Home</a></li>
         <li><a href="http://www..../faq">Questions</a></li>
